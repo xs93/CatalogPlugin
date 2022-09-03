@@ -1,0 +1,29 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+
+enableFeaturePreview('VERSION_CATALOGS')
+dependencyResolutionManagement{
+    versionCatalogs{
+        libs{
+            from('com.github.xs93.catalog:catalog:1.0.0')
+        }
+    }
+}
+
+rootProject.name = "CatalogPlugin"
+include ':app'
+include ':catalog'

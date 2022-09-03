@@ -1,0 +1,21 @@
+plugins {
+    id 'version-catalog'
+    id 'maven-publish'
+}
+
+catalog {
+    versionCatalog {
+        from files("libs.versions.toml")
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.xs93.catalog'
+            artifactId = 'catalog'
+            version = '1.0.0'
+            from components.versionCatalog
+        }
+    }
+}
